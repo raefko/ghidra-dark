@@ -75,7 +75,7 @@ class TCDBrowser:
                         element.set("VALUE", option.value)
 
         self._indent(self.root)
-    
+
         xmlstr = MD.parseString(ET.tostring(self.root)).toprettyxml(indent="", newl="", encoding="UTF-8")
         with open(self.path, "wb") as f:
             f.write(xmlstr)

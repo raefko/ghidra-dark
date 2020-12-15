@@ -44,7 +44,8 @@ print(f"Using Ghidra installation path: {install_path}")
 
 # Get the version from the application.properties file
 version = ""
-properties_path = os.path.join(install_path, "Ghidra", "application.properties")
+properties_path = os.path.join(
+    install_path, "Ghidra", "application.properties")
 with open(properties_path, "r") as fp:
     for line in fp:
         if "application.version=" in line:
@@ -63,7 +64,8 @@ if not os.path.exists(flatlaf_path):
         fp.write(response.read())
 
 launch_sh_path = os.path.join(install_path, "support", launch_sh)
-launch_properties_path = os.path.join(install_path, "support", "launch.properties")
+launch_properties_path = os.path.join(
+    install_path, "support", "launch.properties")
 
 # Add FlatLaf to the list of jar files
 with fileinput.FileInput(launch_sh_path, inplace=True, backup=".bak") as fp:
@@ -98,8 +100,10 @@ else:
 
 ghidra_home_path = os.path.join(Path.home(), ".ghidra", version_path)
 preferences_path = os.path.join(ghidra_home_path, "preferences")
-code_browser_path = os.path.join(ghidra_home_path, "tools", "_code_browser.tcd")
-code_browser_bak_path = os.path.join(ghidra_home_path, "tools", "_code_browser.tcd.bak")
+code_browser_path = os.path.join(
+    ghidra_home_path, "tools", "_code_browser.tcd")
+code_browser_bak_path = os.path.join(
+    ghidra_home_path, "tools", "_code_browser.tcd.bak")
 
 print(f"Using Ghidra home path: {ghidra_home_path}")
 
